@@ -4,3 +4,7 @@ describe('Compass Tests', function() {
   });
 });
 
+function showDegree() {
+  return 0;
+}
+

@@ -42,29 +42,25 @@ describe('Compass Tests', function () {
   });
 });
 
-function Compass() {}
+
+function Compass() {
+}
 
 Compass.prototype = {
+  degreeToTextMap: {
+    0: 'North',
+    23: 'North North East',
+    45: 'North East',
+    68: 'East North East',
+    90: 'East'
+  },
   degree: 0,
   rotateAndgetDegreeAsText: function (degree) {
     this.degree = degree;
     this.getDegreeAsText();
   },
   getDegreeAsText: function () {
-    var degree = this.getDegree();
-    if (90 === degree) {
-      return 'East';
-    }
-    if (68 === degree) {
-      return 'East North East';
-    }
-    if (45 === degree) {
-      return 'North East';
-    }
-    if (23 === degree) {
-      return 'North North East';
-    }
-    return 'North';
+    return this.degreeToTextMap[this.getDegree()];
   },
   getDegree: function () {
     return this.degree;

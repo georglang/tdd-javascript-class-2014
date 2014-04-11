@@ -1,10 +1,10 @@
 describe('Compass Tests', function () {
   it('should show degree', function () {
-    expect(showDegree()).toBe(0);
+    expect(Compass.prototype.showDegree()).toBe(0);
   });
 
   it('should show text', function () {
-    expect(showDegreeAsText()).toBe('North');
+    expect(Compass.prototype.showDegreeAsText()).toBe('North');
   });
 
   it('should show degree as text', function () {

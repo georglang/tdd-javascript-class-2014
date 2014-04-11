@@ -13,6 +13,6 @@ function showDegree() {
 }
 
 function showDegreeAsText() {
-  return 0 + '°';
+  return 'North';
 }
 

@@ -13,9 +13,9 @@
     "jquery": "~2.1.0"
   },
   "devDependencies": {
-    "jasmine-matchers": "^0.2.3",
-    "jasmine-node": "^1.14.3",
-    "beefy": "~1.1.0",
-    "browserify": "~3.33.0"
+    "jasmine-matchers": "latest",
+    "jasmine-node": "latest",
+    "beefy": "latest",
+    "browserify": "latest"
   }
 }

@@ -22,27 +22,29 @@ describe('Compass Tests', function () {
   });
 
   it('should show 90 degree as text', function () {
-    spyOn(Compass.prototype, 'showDegreeAsText');
-
     Compass.prototype.rotateAndShowDegreeAsText(90);
-    expect(Compass.prototype.showDegreeAsText).toBe('East');
+    expect(Compass.prototype.showDegreeAsText()).toBe('East');
   });
 });
 
 function Compass() {
-
+//this.degree = 0;
 }
 
 Compass.prototype = {
-  rotateAndShowDegreeAsText: function () {
+  degree: 0,
+  rotateAndShowDegreeAsText: function (degree) {
+    this.degree = degree;
     this.showDegreeAsText();
   },
   showDegreeAsText: function () {
-    this.showDegree();
-
+    var degree = this.showDegree();
+    if (90 === degree) {
+      return 'East';
+    }
     return 'North';
   },
   showDegree: function () {
-    return 0;
+    return this.degree;
   }
 };

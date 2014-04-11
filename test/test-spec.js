@@ -31,11 +31,10 @@ Compass.prototype = {
     Compass.prototype.showDegreeAsText();
   },
   showDegreeAsText: function () {
+    Compass.prototype.showDegree();
+    return 'North';
   },
   showDegree: function () {
     return 0;
-  },
-  showDegreeAsText: function () {
-    return 'North';
   }
 };

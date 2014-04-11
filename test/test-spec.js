@@ -24,7 +24,7 @@ describe('Compass Tests', function () {
   it('should show 90 degree as text', function () {
     spyOn(Compass.prototype, 'showDegreeAsText');
 
-    Compass.prototype.rotateAndShowDegreeAsText();
+    Compass.prototype.rotateAndShowDegreeAsText(90);
     expect(Compass.prototype.showDegreeAsText).toBe('East');
   });
 });
@@ -39,6 +39,7 @@ Compass.prototype = {
   },
   showDegreeAsText: function () {
     this.showDegree();
+
     return 'North';
   },
   showDegree: function () {

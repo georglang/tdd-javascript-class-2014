@@ -11,3 +11,7 @@ function showDegree() {
   return 0;
 }
 
+function showDegreeAsText() {
+  return 0 + '°';
+}
+

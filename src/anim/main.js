@@ -1,4 +1,4 @@
-var jQuery = require('jquery');
+var jQuery = $;
 
 var imageEl = jQuery(new Image());
 imageEl

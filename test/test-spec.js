@@ -14,7 +14,7 @@ describe('Compass Tests', function () {
     expect(Compass.prototype.showDegreeAsText).toHaveBeenCalled();
   });
 
-  it('should show 90 degree', function () {
+  it('should showDegree', function () {
     spyOn(Compass.prototype, 'showDegree');
 
     Compass.prototype.showDegreeAsText();

@@ -3,27 +3,27 @@ describe('Compass Tests', function () {
     expect(Compass.prototype.showDegree()).toBe(0);
   });
 
-  it('should show text', function () {
-    expect(Compass.prototype.showDegreeAsText()).toBe('North');
+  it('should get text', function () {
+    expect(Compass.prototype.getDegreeAsText()).toBe('North');
   });
 
-  it('should show degree as text', function () {
-    spyOn(Compass.prototype, 'showDegreeAsText');
+  it('should get degree as text', function () {
+    spyOn(Compass.prototype, 'getDegreeAsText');
 
     Compass.prototype.rotateAndShowDegreeAsText(0);
-    expect(Compass.prototype.showDegreeAsText).toHaveBeenCalled();
+    expect(Compass.prototype.getDegreeAsText).toHaveBeenCalled();
   });
 
   it('should showDegree', function () {
     spyOn(Compass.prototype, 'showDegree');
 
-    Compass.prototype.showDegreeAsText();
+    Compass.prototype.getDegreeAsText();
     expect(Compass.prototype.showDegree).toHaveBeenCalled();
   });
 
-  it('should show 90 degree as text', function () {
+  it('should get 90 degree as text', function () {
     Compass.prototype.rotateAndShowDegreeAsText(90);
-    expect(Compass.prototype.showDegreeAsText()).toBe('East');
+    expect(Compass.prototype.getDegreeAsText()).toBe('East');
   });
 });
 
@@ -35,9 +35,9 @@ Compass.prototype = {
   degree: 0,
   rotateAndShowDegreeAsText: function (degree) {
     this.degree = degree;
-    this.showDegreeAsText();
+    this.getDegreeAsText();
   },
-  showDegreeAsText: function () {
+  getDegreeAsText: function () {
     var degree = this.showDegree();
     if (90 === degree) {
       return 'East';

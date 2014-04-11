@@ -28,10 +28,10 @@ function Compass() {
 
 Compass.prototype = {
   rotateAndShowDegreeAsText: function () {
-    Compass.prototype.showDegreeAsText();
+    this.showDegreeAsText();
   },
   showDegreeAsText: function () {
-    Compass.prototype.showDegree();
+    this.showDegree();
     return 'North';
   },
   showDegree: function () {

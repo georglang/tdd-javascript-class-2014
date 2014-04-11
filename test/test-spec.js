@@ -45,6 +45,9 @@ Compass.prototype = {
     if (90 === degree) {
       return 'East';
     }
+    if (68 === degree) {
+      return 'East North East';
+    }
     return 'North';
   },
   getDegree: function () {

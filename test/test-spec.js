@@ -13,6 +13,13 @@ describe('Compass Tests', function () {
     Compass.prototype.rotateAndShowDegreeAsText();
     expect(Compass.prototype.showDegreeAsText).toHaveBeenCalled();
   });
+
+  it('should show 90 degree', function () {
+    spyOn(Compass.prototype, 'showDegree');
+
+    Compass.prototype.showDegreeAsText();
+    expect(Compass.prototype.showDegree).toHaveBeenCalled();
+  });
 });
 
 function Compass() {

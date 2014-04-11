@@ -7,7 +7,7 @@ describe('Compass Tests', function () {
     expect(showDegreeAsText()).toBe('North');
   });
 
-  it('should rotate image', function () {
+  it('should show degree as text', function () {
     spyOn(Compass.prototype, 'showDegreeAsText');
 
     Compass.prototype.rotateAndShowDegreeAsText();

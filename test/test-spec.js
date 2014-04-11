@@ -30,6 +30,11 @@ describe('Compass Tests', function () {
     Compass.prototype.rotateAndgetDegreeAsText(68);
     expect(Compass.prototype.getDegreeAsText()).toBe('East North East');
   });
+
+  it('should get 45 degree as text', function () {
+    Compass.prototype.rotateAndgetDegreeAsText(45);
+    expect(Compass.prototype.getDegreeAsText()).toBe('North East');
+  });
 });
 
 function Compass() {}

@@ -23,15 +23,12 @@ Compass.prototype = {
   rotateAndShowDegreeAsText: function () {
     Compass.prototype.showDegreeAsText();
   },
-  showDegreeAsText: function() {}
+  showDegreeAsText: function () {
+  },
+  showDegree: function () {
+    return 0;
+  },
+  showDegreeAsText: function () {
+    return 'North';
+  }
 };
-
-
-function showDegree() {
-  return 0;
-}
-
-function showDegreeAsText() {
-  return 'North';
-}
-

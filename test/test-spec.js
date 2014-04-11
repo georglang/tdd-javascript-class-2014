@@ -15,6 +15,18 @@ describe('Compass Tests', function () {
   });
 });
 
+function Compass() {
+
+}
+
+Compass.prototype = {
+  rotateAndShowDegreeAsText: function () {
+    Compass.prototype.showDegreeAsText();
+  },
+  showDegreeAsText: function() {}
+};
+
+
 function showDegree() {
   return 0;
 }

@@ -10,7 +10,7 @@ describe('Compass Tests', function () {
   it('should show degree as text', function () {
     spyOn(Compass.prototype, 'showDegreeAsText');
 
-    Compass.prototype.rotateAndShowDegreeAsText();
+    Compass.prototype.rotateAndShowDegreeAsText(0);
     expect(Compass.prototype.showDegreeAsText).toHaveBeenCalled();
   });
 

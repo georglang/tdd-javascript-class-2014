@@ -7,11 +7,11 @@ describe('Compass Tests', function () {
     expect(Compass.prototype.getDegreeAsText()).toBe('North');
   });
 
-  it('should get degree as text', function () {
+  it('should show degree as text', function () {
     spyOn(Compass.prototype, 'getDegreeAsText');
 
     Compass.prototype.rotateAndShowDegreeAsText(0);
-    expect(Compass.prototype.getDegreeAsText).toHaveBeenCalled();
+    expect(Compass.prototype.showDegreeAsText).toHaveBeenCalled();
   });
 
   it('should get degree', function () {
@@ -40,6 +40,8 @@ describe('Compass Tests', function () {
     Compass.prototype.rotateAndShowDegreeAsText(23);
     expect(Compass.prototype.getDegreeAsText()).toBe('North North East');
   });
+
+
 });
 
 

@@ -80,13 +80,22 @@ describe('handling jQuery', function () {
     expect(compass.image._getElement).toHaveBeenCalled();
   });
 
-  it('should call rotateAndShowDegreeAsText with degree 10', function () {
-    spyOn(compass, 'rotateAndShowDegreeAsText');
-    document.triggerScrollEventWithDelta(10);
-    expect(compass.rotateAndShowDegreeAsText).toHaveBeenCalledWith(10);
+  it('should call handleScrollEvent with degree 10', function () {
+    spyOn(compass, 'handleScrollEvent');
+    Document.prototype.triggerScrollEventWithDelta(10, compass);
+    expect(compass.handleScrollEvent).toHaveBeenCalledWith(10);
   });
 });
 
+function Document() {
+
+}
+
+Document.prototype = {
+  triggerScrollEventWithDelta: function (deltaPosition, compass) {
+    compass.handleScrollEvent(deltaPosition);
+  }
+};
 
 
 function Compass() {
@@ -113,6 +122,9 @@ Compass.prototype = {
   },
   showDegreeAsText: function () {
     this.getDegreeAsText();
+  },
+  handleScrollEvent: function(event) {
+
   }
 };
 

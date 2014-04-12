@@ -112,7 +112,7 @@ Document.prototype = {
     this.scrollHandler(deltaPosition);
   },
   insertIntoHTML: function (idHTMLElement, degreeAsText) {
-
+    //    jQuery('#'+idHTMLElement).html(degreeAsText);
   }
 };
 

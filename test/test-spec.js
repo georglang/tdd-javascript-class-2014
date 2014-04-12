@@ -108,7 +108,7 @@ function Document() {
 
 Document.prototype = {
   scrollHandler: null,
-  bindScrollCallback: function(callback) {
+  bindScrollCallback: function (callback) {
     this.scrollHandler = callback;
   },
   triggerScrollEventWithDelta: function (deltaPosition) {
@@ -133,7 +133,7 @@ Compass.prototype = {
     68: 'East North East',
     90: 'East'
   },
-  handleScrollEvent: function(deltaPosition) {
+  handleScrollEvent: function (deltaPosition) {
     this.rotateAndShowDegreeAsText(deltaPosition);
   },
   rotateAndShowDegreeAsText: function (degree) {
@@ -148,6 +148,14 @@ Compass.prototype = {
   },
   showDegreeAsText: function () {
     Document.prototype.insertIntoHTML(this.idHTMLElement, this.getDegreeAsText());
+  },
+  convertDeltaPositionToDegree: function (deltaPosition) {
+    if (deltaPosition > 0) {
+      this.image.counter += 1;
+    } else if (deltaPosition < 0) {
+      this.image.counter -= 1;
+    }
+    return (this.image.counter % 360);
   }
 };
 

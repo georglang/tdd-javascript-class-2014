@@ -75,9 +75,9 @@ describe('handling jQuery', function () {
   });
 
   it('should get jQuery element', function () {
-    spyOn(Image.prototype, '_getElement');
-    Image.prototype.getDegree();
-    expect(Image.prototype._getElement).toHaveBeenCalled();
+    spyOn(compass.image, '_getElement');
+    compass.image.getDegree();
+    expect(compass.image._getElement).toHaveBeenCalled();
   });
 });
 

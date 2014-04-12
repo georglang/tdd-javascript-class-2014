@@ -55,6 +55,12 @@ describe('handling jQuery', function () {
     Compass.prototype.rotateAndShowDegreeAsText(90);
     expect(Image.prototype.rotate).toHaveBeenCalled();
   });
+
+  it('should return degree', function () {
+    spyOn(Image.prototype, 'getDegree');
+    Compass.prototype.getDegree();
+    expect(Image.prototype.getDegree).toHaveBeenCalled();
+  });
 });
 
 

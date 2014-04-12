@@ -92,6 +92,12 @@ describe('handling jQuery', function () {
     compass.handleScrollEvent(10);
     expect(compass.rotateAndShowDegreeAsText).toHaveBeenCalledWith(10);
   });
+
+  it('should call insert degree into direction heading', function () {
+    spyOn(Document.prototype, 'insertIntoHTML');
+    compass.showDegreeAsText();
+    expect(compass.insertIntoHTML).toHaveBeenCalled();
+  });
 });
 
 function Document() {

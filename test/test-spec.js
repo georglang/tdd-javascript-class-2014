@@ -1,3 +1,5 @@
+var jQuery = require('jquery');
+
 describe('Compass Tests', function () {
   it('should get degree', function () {
     expect(Compass.prototype.getDegree()).toBe(0);
@@ -61,6 +63,12 @@ describe('handling jQuery', function () {
     Compass.prototype.getDegree();
     expect(Image.prototype.getDegree).toHaveBeenCalled();
   });
+
+  it('should get jQuery element', function () {
+    spyOn(Image.prototype, '_getElement');
+    Image.prototype.getDegree();
+    expect(Image.prototype._getElement).toHaveBeenCalled();
+  });
 });
 
 
@@ -95,7 +103,6 @@ function Image() {
 }
 
 Image.prototype = {
-
   degree: 0,
   rotate: function (degree) {
     this.degree = degree;

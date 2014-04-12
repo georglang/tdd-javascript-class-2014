@@ -82,20 +82,12 @@ describe('handling jQuery', function () {
 
   it('should call rotateAndShowDegreeAsText with degree 10', function () {
     spyOn(compass, 'rotateAndShowDegreeAsText');
-    ScrollHandler.prototype.scrollDownTo(10, compass);
+    document.triggerScrollEventWithDelta(10);
     expect(compass.rotateAndShowDegreeAsText).toHaveBeenCalledWith(10);
   });
 });
 
-function ScrollHandler() {
 
-}
-
-ScrollHandler.prototype = {
-  scrollDownTo: function (degree, compass) {
-    compass.rotateAndShowDegreeAsText(degree);
-  }
-};
 
 function Compass() {
   this.image = new Image();
@@ -125,7 +117,7 @@ Compass.prototype = {
 };
 
 function Image() {
-
+  this.counter = 0;
 }
 
 Image.prototype = {

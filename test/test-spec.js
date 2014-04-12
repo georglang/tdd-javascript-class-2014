@@ -49,6 +49,14 @@ describe('Compass Tests', function () {
   });
 });
 
+describe('handling jQuery', function () {
+  it('should rotate image', function () {
+    spyOn(Image, 'rotate');
+    Compass.prototype.rotateAndShowDegreeAsText(90);
+    expect(Image.rotate).toHaveBeenCalled();
+  });
+});
+
 
 function Compass() {
 }
@@ -72,7 +80,7 @@ Compass.prototype = {
   getDegree: function () {
     return this.degree;
   },
-  showDegreeAsText: function() {
+  showDegreeAsText: function () {
     this.getDegreeAsText();
   }
 };

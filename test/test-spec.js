@@ -57,15 +57,20 @@ describe('Compass Tests', function () {
 });
 
 describe('handling jQuery', function () {
+  var compass;
+  beforeEach(function() {
+    compass = new Compass();
+  });
+
   it('should rotate image', function () {
     spyOn(Image.prototype, 'rotate');
-    Compass.prototype.rotateAndShowDegreeAsText(90);
+    compass.rotateAndShowDegreeAsText(90);
     expect(Image.prototype.rotate).toHaveBeenCalled();
   });
 
   it('should return degree', function () {
     spyOn(Image.prototype, 'getDegree');
-    Compass.prototype.getDegree();
+    compass.getDegree();
     expect(Image.prototype.getDegree).toHaveBeenCalled();
   });
 

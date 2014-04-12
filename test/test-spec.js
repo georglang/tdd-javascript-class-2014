@@ -101,7 +101,7 @@ describe('handling jQuery', function () {
   it('should call rotateAndShowDegreeAsText delta position 10', function () {
     spyOn(compass, 'rotateAndShowDegreeAsText');
     compass.handleScrollEvent(10);
-    expect(compass.rotateAndShowDegreeAsText).toHaveBeenCalledWith(10);
+    expect(compass.rotateAndShowDegreeAsText).toHaveBeenCalled();
   });
 
   it('should call insert degree into direction heading', function () {

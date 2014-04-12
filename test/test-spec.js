@@ -75,17 +75,15 @@ Compass.prototype = {
     68: 'East North East',
     90: 'East'
   },
-  degree: 0,
   rotateAndShowDegreeAsText: function (degree) {
-    this.degree = degree;
     this.showDegreeAsText();
-    Image.prototype.rotate();
+    Image.prototype.rotate(degree);
   },
   getDegreeAsText: function () {
     return this.degreeToTextMap[this.getDegree()];
   },
   getDegree: function () {
-    return this.degree;
+    return Image.prototype.getDegree();
   },
   showDegreeAsText: function () {
     this.getDegreeAsText();
@@ -97,7 +95,12 @@ function Image() {
 }
 
 Image.prototype = {
-  rotate: function () {
 
+  degree: 0,
+  rotate: function (degree) {
+    this.degree = degree;
+  },
+  getDegree: function () {
+    return this.degree;
   }
 };

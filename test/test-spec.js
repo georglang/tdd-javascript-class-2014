@@ -69,9 +69,9 @@ describe('handling jQuery', function () {
   });
 
   it('should return degree', function () {
-    spyOn(Image.prototype, 'getDegree');
+    spyOn(compass.image, 'getDegree');
     compass.getDegree();
-    expect(Image.prototype.getDegree).toHaveBeenCalled();
+    expect(compass.image.getDegree).toHaveBeenCalled();
   });
 
   it('should get jQuery element', function () {

@@ -142,7 +142,8 @@ Compass.prototype = {
     90: 'East'
   },
   handleScrollEvent: function (deltaPosition) {
-    this.rotateAndShowDegreeAsText(deltaPosition);
+    var degree = this.convertDeltaPositionToDegree(deltaPosition);
+    this.rotateAndShowDegreeAsText(degree);
   },
   rotateAndShowDegreeAsText: function (degree) {
     this.showDegreeAsText();

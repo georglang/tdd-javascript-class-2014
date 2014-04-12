@@ -65,6 +65,11 @@ describe('Compass Tests', function () {
     compass.handleScrollEvent(10);
     expect(compass.convertDeltaPositionToDegree).toHaveBeenCalled();
   });
+
+  it('should degree as number with °', function () {
+    compass.rotateAndShowDegreeAsText(13);
+    expect(compass.getDegreeAsText()).toBe('13°');
+  });
 });
 
 describe('handling jQuery', function () {

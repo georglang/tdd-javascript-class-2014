@@ -139,7 +139,18 @@ Compass.prototype = {
     23: 'North North East',
     45: 'North East',
     68: 'East North East',
-    90: 'East'
+    90: 'East',
+    113: 'East South East',
+    135: 'South East',
+    158: 'South South East',
+    180: 'South',
+    203: 'South South West',
+    225: 'South West',
+    284: 'West South West',
+    270: 'West',
+    293: 'West North West',
+    315: 'North West',
+    338: 'North North West'
   },
   handleScrollEvent: function (deltaPosition) {
     var degree = this.convertDeltaPositionToDegree(deltaPosition);

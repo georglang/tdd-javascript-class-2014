@@ -86,6 +86,12 @@ describe('handling jQuery', function () {
     Document.prototype.triggerScrollEventWithDelta(10);
     expect(compass.handleScrollEvent).toHaveBeenCalledWith(10);
   });
+
+  it('should call rotateAndShowDegreeAsText delta position 10', function () {
+    spyOn(compass, 'rotateAndShowDegreeAsText');
+    compass.handleScrollEvent(10);
+    expect(compass.rotateAndShowDegreeAsText).toHaveBeenCalledWith(10);
+  });
 });
 
 function Document() {

@@ -80,7 +80,7 @@ describe('handling jQuery', function () {
     expect(compass.image._getElement).toHaveBeenCalled();
   });
 
-  it('should call handleScrollEvent with degree 10', function () {
+  it('should call handleScrollEvent with delta position 10', function () {
     spyOn(compass, 'handleScrollEvent');
     Document.prototype.bindScrollCallback(compass.handleScrollEvent);
     Document.prototype.triggerScrollEventWithDelta(10);

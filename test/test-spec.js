@@ -110,12 +110,16 @@ Document.prototype = {
   },
   triggerScrollEventWithDelta: function (deltaPosition) {
     this.scrollHandler(deltaPosition);
+  },
+  insertIntoHTML: function (idHTMLElement, degreeAsText) {
+
   }
 };
 
 
 function Compass() {
   this.image = new Image();
+  this.idHTMLElement = "directionHeading";
 }
 
 Compass.prototype = {
@@ -140,7 +144,7 @@ Compass.prototype = {
     return this.image.getDegree();
   },
   showDegreeAsText: function () {
-    this.getDegreeAsText();
+    Document.prototype.insertIntoHTML(this.idHTMLElement, this.getDegreeAsText());
   }
 };
 

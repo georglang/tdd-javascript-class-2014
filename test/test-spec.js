@@ -1,53 +1,58 @@
 var jQuery = require('jquery');
 
 describe('Compass Tests', function () {
+  var compass;
+  beforeEach(function() {
+    compass = new Compass();
+  });
+
   it('should get degree', function () {
-    expect(Compass.prototype.getDegree()).toBe(0);
+    expect(compass.getDegree()).toBe(0);
   });
 
   it('should get text', function () {
-    expect(Compass.prototype.getDegreeAsText()).toBe('North');
+    expect(compass.getDegreeAsText()).toBe('North');
   });
 
   it('should show degree as text', function () {
-    spyOn(Compass.prototype, 'showDegreeAsText');
+    spyOn(compass, 'showDegreeAsText');
 
-    Compass.prototype.rotateAndShowDegreeAsText(0);
-    expect(Compass.prototype.showDegreeAsText).toHaveBeenCalled();
+    compass.rotateAndShowDegreeAsText(0);
+    expect(compass.showDegreeAsText).toHaveBeenCalled();
   });
 
   it('should get degree', function () {
-    spyOn(Compass.prototype, 'getDegree');
+    spyOn(compass, 'getDegree');
 
-    Compass.prototype.getDegreeAsText();
-    expect(Compass.prototype.getDegree).toHaveBeenCalled();
+    compass.getDegreeAsText();
+    expect(compass.getDegree).toHaveBeenCalled();
   });
 
   it('should get 90 degree as text', function () {
-    Compass.prototype.rotateAndShowDegreeAsText(90);
-    expect(Compass.prototype.getDegreeAsText()).toBe('East');
+    compass.rotateAndShowDegreeAsText(90);
+    expect(compass.getDegreeAsText()).toBe('East');
   });
 
   it('should get 68 degree as text', function () {
-    Compass.prototype.rotateAndShowDegreeAsText(68);
-    expect(Compass.prototype.getDegreeAsText()).toBe('East North East');
+    compass.rotateAndShowDegreeAsText(68);
+    expect(compass.getDegreeAsText()).toBe('East North East');
   });
 
   it('should get 45 degree as text', function () {
-    Compass.prototype.rotateAndShowDegreeAsText(45);
-    expect(Compass.prototype.getDegreeAsText()).toBe('North East');
+    compass.rotateAndShowDegreeAsText(45);
+    expect(compass.getDegreeAsText()).toBe('North East');
   });
 
   it('should get 23 degree as text', function () {
-    Compass.prototype.rotateAndShowDegreeAsText(23);
-    expect(Compass.prototype.getDegreeAsText()).toBe('North North East');
+    compass.rotateAndShowDegreeAsText(23);
+    expect(compass.getDegreeAsText()).toBe('North North East');
   });
 
   it('should get degree as text', function () {
-    spyOn(Compass.prototype, 'getDegreeAsText');
+    spyOn(compass, 'getDegreeAsText');
 
-    Compass.prototype.showDegreeAsText();
-    expect(Compass.prototype.getDegreeAsText).toHaveBeenCalled();
+    compass.showDegreeAsText();
+    expect(compass.getDegreeAsText).toHaveBeenCalled();
   });
 });
 

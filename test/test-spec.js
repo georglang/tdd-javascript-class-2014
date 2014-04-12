@@ -63,9 +63,9 @@ describe('handling jQuery', function () {
   });
 
   it('should rotate image', function () {
-    spyOn(Image.prototype, 'rotate');
+    spyOn(compass.image, 'rotate');
     compass.rotateAndShowDegreeAsText(90);
-    expect(Image.prototype.rotate).toHaveBeenCalled();
+    expect(compass.image.rotate).toHaveBeenCalled();
   });
 
   it('should return degree', function () {
@@ -83,6 +83,7 @@ describe('handling jQuery', function () {
 
 
 function Compass() {
+  this.image = new Image();
 }
 
 Compass.prototype = {

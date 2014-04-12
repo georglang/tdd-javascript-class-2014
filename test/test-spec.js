@@ -54,8 +54,16 @@ describe('Compass Tests', function () {
     compass.showDegreeAsText();
     expect(compass.getDegreeAsText).toHaveBeenCalled();
   });
+
   it('should convert delta position to degree', function () {
     expect(compass.convertDeltaPositionToDegree(0)).toBe(0);
+  });
+
+  it('should get degree as text', function () {
+    spyOn(compass, 'convertDeltaPositionToDegree');
+
+    compass.handleScrollEvent(10);
+    expect(compass.convertDeltaPositionToDegree).toHaveBeenCalled();
   });
 });
 

@@ -166,7 +166,7 @@ Compass.prototype = {
     this.image.rotate(degree);
   },
   getDegreeAsText: function () {
-    return this.degreeToTextMap[this.getDegree()];
+    return (this.degreeToTextMap[this.getDegree()] || this.getDegree() + '°');
   },
   getDegree: function () {
     return this.image.getDegree();

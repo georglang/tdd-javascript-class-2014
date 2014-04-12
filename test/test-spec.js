@@ -59,7 +59,7 @@ describe('Compass Tests', function () {
     expect(compass.convertDeltaPositionToDegree(0)).toBe(0);
   });
 
-  it('should get degree as text', function () {
+  it('should call convertDeltaPositionToDegree', function () {
     spyOn(compass, 'convertDeltaPositionToDegree');
 
     compass.handleScrollEvent(10);

@@ -79,7 +79,14 @@ describe('handling jQuery', function () {
     compass.image.getDegree();
     expect(compass.image._getElement).toHaveBeenCalled();
   });
+
+  it('should call rotateAndShowDegreeAsText with degree 10', function () {
+    spyOn(compass, 'rotateAndShowDegreeAsText');
+    scrollHandler.scrollDownTo(10);
+    expect(compass.rotateAndShowDegreeAsText).toHaveBeenCalledWith(10);
+  });
 });
+
 
 
 function Compass() {

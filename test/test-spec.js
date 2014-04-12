@@ -82,7 +82,8 @@ describe('handling jQuery', function () {
 
   it('should call handleScrollEvent with degree 10', function () {
     spyOn(compass, 'handleScrollEvent');
-    Document.prototype.triggerScrollEventWithDelta(10, compass);
+    Document.prototype.bindScrollCallback(compass.handleScrollEvent);
+    Document.prototype.triggerScrollEventWithDelta(10);
     expect(compass.handleScrollEvent).toHaveBeenCalledWith(10);
   });
 });

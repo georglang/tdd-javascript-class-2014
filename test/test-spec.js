@@ -89,12 +89,15 @@ describe('handling jQuery', function () {
 });
 
 function Document() {
-
 }
 
 Document.prototype = {
-  triggerScrollEventWithDelta: function (deltaPosition, compass) {
-    compass.handleScrollEvent(deltaPosition);
+  scrollHandler: null,
+  bindScrollCallback: function(callback) {
+    this.scrollHandler = callback;
+  },
+  triggerScrollEventWithDelta: function (deltaPosition) {
+    this.scrollHandler(deltaPosition);
   }
 };
 
@@ -124,8 +127,8 @@ Compass.prototype = {
   showDegreeAsText: function () {
     this.getDegreeAsText();
   },
-  handleScrollEvent: function(event) {
-
+  handleScrollEvent: function(deltaPosition) {
+    return true;
   }
 };
 

@@ -70,6 +70,10 @@ describe('Compass Tests', function () {
     compass.rotateAndShowDegreeAsText(13);
     expect(compass.getDegreeAsText()).toBe('13°');
   });
+
+  it('should return positive degree when delta position is -1 ', function() {
+    expect(compass.convertDeltaPositionToDegree(-1)).toBe(359);
+  });
 });
 
 describe('handling jQuery', function () {

@@ -96,13 +96,13 @@ Compass.prototype = {
   },
   rotateAndShowDegreeAsText: function (degree) {
     this.showDegreeAsText();
-    Image.prototype.rotate(degree);
+    this.image.rotate(degree);
   },
   getDegreeAsText: function () {
     return this.degreeToTextMap[this.getDegree()];
   },
   getDegree: function () {
-    return Image.prototype.getDegree();
+    return this.image.getDegree();
   },
   showDegreeAsText: function () {
     this.getDegreeAsText();

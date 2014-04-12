@@ -96,7 +96,7 @@ describe('handling jQuery', function () {
   it('should call insert degree into direction heading', function () {
     spyOn(Document.prototype, 'insertIntoHTML');
     compass.showDegreeAsText();
-    expect(compass.insertIntoHTML).toHaveBeenCalled();
+    expect(Document.prototype.insertIntoHTML).toHaveBeenCalled();
   });
 });
 

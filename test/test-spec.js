@@ -120,6 +120,9 @@ Compass.prototype = {
     68: 'East North East',
     90: 'East'
   },
+  handleScrollEvent: function(deltaPosition) {
+    this.rotateAndShowDegreeAsText(deltaPosition);
+  },
   rotateAndShowDegreeAsText: function (degree) {
     this.showDegreeAsText();
     this.image.rotate(degree);
@@ -132,9 +135,6 @@ Compass.prototype = {
   },
   showDegreeAsText: function () {
     this.getDegreeAsText();
-  },
-  handleScrollEvent: function(deltaPosition) {
-    return true;
   }
 };
 

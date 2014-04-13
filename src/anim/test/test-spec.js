@@ -1,5 +1,6 @@
 var jQuery = require('jquery');
-var Compass = require('../src/anim/Compass').Compass;
+var Compass = require('../Compass').Compass;
+var Document = require('../Document').Document;
 
 
 describe('Compass Tests', function () {
@@ -121,40 +122,3 @@ describe('handling jQuery', function () {
     expect(Document.prototype.insertIntoHTML).toHaveBeenCalled();
   });
 });
-
-function Document() {}
-
-Document.prototype = {
-  scrollHandler: null,
-  bindScrollCallback: function (callback) {
-    this.scrollHandler = callback;
-  },
-  triggerScrollEventWithDelta: function (deltaPosition) {
-    this.scrollHandler(deltaPosition);
-  },
-  insertIntoHTML: function (idHTMLElement, degreeAsText) {
-    //    jQuery('#'+idHTMLElement).html(degreeAsText);
-  }
-};
-
-
-
-
-
-function Image() {
-  this.counter = 0;
-}
-
-Image.prototype = {
-  degree: 0,
-  _getElement: function () {
-//    return jQuery('#' + this._imageId);
-  },
-  rotate: function (degree) {
-    this.degree = degree;
-  },
-  getDegree: function () {
-    this._getElement();
-    return this.degree;
-  }
-};

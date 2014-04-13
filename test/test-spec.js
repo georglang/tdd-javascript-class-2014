@@ -71,7 +71,7 @@ describe('Compass Tests', function () {
     expect(compass.getDegreeAsText()).toBe('13°');
   });
 
-  it('should return positive degree when delta position is -1 ', function() {
+  it('should return positive degree when delta position is -1 ', function () {
     expect(compass.convertDeltaPositionToDegree(-1)).toBe(359);
   });
 });
@@ -120,8 +120,7 @@ describe('handling jQuery', function () {
   });
 });
 
-function Document() {
-}
+function Document() {}
 
 Document.prototype = {
   scrollHandler: null,
@@ -135,7 +134,6 @@ Document.prototype = {
     //    jQuery('#'+idHTMLElement).html(degreeAsText);
   }
 };
-
 
 function Compass() {
   this.image = new Image();
@@ -183,6 +181,10 @@ Compass.prototype = {
       this.image.counter += 1;
     } else if (deltaPosition < 0) {
       this.image.counter -= 1;
+
+      if (this.image.counter < 0) {
+        this.image.counter = 359;
+      }
     }
     return (this.image.counter % 360);
   }
